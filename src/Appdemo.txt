@@ -1,0 +1,483 @@
+import About from "./components/About.js";
+import  React, { useState } from "react";
+import Navbar from "./components/Navbar";
+import A from "./components/TextForm.js";
+
+
+
+function App() {
+  let [mode , setmode] = useState('light');
+
+  const change=()=>{
+    if(mode==='light'){
+      setmode('dark')
+      document.body.style.backgroundColor="#212529" ;
+      // document.body.style.color="white";
+      document.getElementById("myBox").backgroundColor="gray";
+      
+    }else{
+      setmode('light')
+      document.body.style.backgroundColor="white";
+      // document.body.style.color="white";
+      document.getElementById("myBox").backgroundColor="gray";
+    }
+  }
+
+  return (
+    <>    
+     
+     <Navbar  title="TextUtil"  title2="About"  md={mode} toggle={change}/>
+   <div className="container my-3">
+  
+
+       {/* <A heading ="Enter the text"/>   */}
+       {/* <About/> */}
+      
+     
+   
+    </>
+  );
+}
+
+export default App ;
+
+
+
+
+
+
+
+//APP
+
+
+
+
+// import About from "./components/About.js";
+// import  React, { useState } from "react";
+// import Navbar from "./components/Navbar";
+// import A from "./components/TextForm.js";
+import one from "./components/o.js";
+import two from "./components/p.js";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route,
+//   Link
+// }from "react-router-dom";
+// import { 
+//   BrowserRouter as Router,
+//    Route,
+//    Routes } from "react-router-dom";
+
+
+
+
+function App() {
+  let [mode , setmode] = useState('light');
+
+  const change=()=>{
+    if(mode==='light'){
+      setmode('dark')
+      document.body.style.backgroundColor="#212529" ;
+      // document.body.style.color="white";
+      document.getElementById("myBox").backgroundColor="gray";
+      
+    }else{
+      setmode('light')
+      document.body.style.backgroundColor="white";
+      // document.body.style.color="white";
+      document.getElementById("myBox").backgroundColor="gray";
+    }
+  }
+
+  return (
+    <>    
+      {/* <BrowserRouter>  
+     <Navbar  title="TextUtil"  title2="About"  md={mode} toggle={change}/>
+
+   <div className="container my-3">
+
+
+	<Routes>
+		{/* <Route path='Path You want to use' element={<What you want to render >}/>  */}
+		  {/* <Route exact path="/about" element={<About />}> */}
+      {/* </Route>	 */}
+	{/* </Routes> */}
+
+{/* </BrowserRouter> */}
+
+
+   {/* <Routes>
+            <Route exact path="/about" element={<About />}></Route>
+            <Route
+              exact path="/TextForm"
+              element={
+                <A */}
+                  {/* // showAlert={showAlert}
+                  // heading="Enter Text to analyze "
+                  // mode={mode}
+                // />
+              // } */}
+  {/* //           ></Route> */}
+  {/* //  </Routes> */}
+  {/* // </div> */}
+  {/* // </BrowserRouter> */}
+
+       {/* <A heading ="Enter the text"/>   */}
+       {/* <About/> */}
+      
+     
+   
+    {/* //  } */}
+    <BrowserRouter>
+        <Navbar title="TextUtils2" title2="About"  md={mode} toggle={change} />
+      
+        <div className="container my-4" >
+          <Routes>
+            {/* <Route  exact path="/About"></Route> */}
+            <Route exact path="/about" element={<About/>}></Route>
+
+              {/* <Route
+               exact path="/TextForm">
+              
+                <A  heading="Enter Text to analyze"/>
+              </Route> */}
+
+          <Route
+               exact path="/TextForm"
+              element={ 
+               <A  heading="Enter Text to analyze"/>
+               }
+            ></Route> 
+
+            </Routes>
+        </div>
+      </BrowserRouter>
+
+     </>
+  );
+}
+
+export default App ;
+
+
+---------------------------------------------------------------------------------------------
+
+//about
+import React , {useState} from 'react'
+
+
+export default function About(){
+  
+  
+
+       const [style1 , upd] = useState({
+        color:"black",
+        backgroundColor:'white'
+        })
+
+       const [btntext , setBtnText] = useState(
+         "Enable Dark Mode"
+       )
+
+         const modes=()=>{
+          if (style1.color==='black'){
+            upd({
+              color:"white",
+              backgroundColor:'black'
+             
+              })
+              document.body.style="black";
+              setBtnText( "Enable bright mode" )  
+             
+          }else{
+            upd({
+              color:"black",
+              backgroundColor:'white'
+             
+              }
+              )
+              document.body.style="white";
+              setBtnText("Enable dark Mode" )  
+          }
+         }
+          // style1={
+          // color:"white",
+          // backgroundColor:"black"
+          
+          // }
+    
+ 
+    return (
+
+   <div className='container' style={style1}>
+   {/* <div className='container'> */}
+    <h2>About</h2>
+    <div className="accordion " id="accordionExample">
+  <div className="accordion-item" style={style1}>
+  {/* <div className="accordion-item" > */}
+    <h2 className="accordion-header" >
+      <button style={style1} className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+      {/* <button  className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> */}
+        Accordion Item #1
+      </button>
+    </h2>
+    <div id="collapseOne" className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+      <div className="accordion-body">
+        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classNamees that we use to style each element. These classNamees control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+  <div className="accordion-item" style={style1}>
+  {/* <div className="accordion-item"> */}
+    <h2 className="accordion-header">
+      <button style={style1} className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      {/* <button  className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"> */}
+        Accordion Item #2
+      </button>
+    </h2>
+    <div id="collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div className="accordion-body">
+        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classNamees that we use to style each element. These classNamees control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+  <div className="accordion-item"   style={style1}>
+  {/* <div className="accordion-item" > */}
+    <h2 className="accordion-header">
+      <button style={style1} className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+      {/* <button  className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"> */}
+        Accordion Item #3
+      </button>
+    </h2>
+    <div id="collapseThree" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div className="accordion-body">
+        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classNamees that we use to style each element. These classNamees control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+</div>
+{/* <button id="vlue" className='change my-3' onClick={changecolor}>Dark Mode</button> */}
+<div className='container'>
+<button type="button"   class="btn btn-primary my-3" onClick={modes}>Enable Dark Mode</button>
+</div>
+
+   </div>
+
+        )
+
+        
+}
+
+
+------------------------------------------------------------------------------------------------------
+
+//TextForm
+
+ 
+ import React , {useState} from 'react'
+  
+  export default function TextForm(props) {
+    // const [ text , setText] = useState('Enter Text here');
+    const [text , setText] = useState('Enter text here');
+    // setText("value dalo");
+    // text = "new value";
+    const handleUpClick=()=>{
+          console.log("uppercase is clicked");
+          let nextTest = text.toUpperCase();
+   setText(nextTest);
+    }
+    const handleOnChange = (abc) =>{
+      console.log("on change");
+      setText(abc.target.value);
+
+    }
+    
+    const cp=()=>{
+      let ttext = document.getElementById("myBox");
+      ttext.select();
+      ttext.setSelectionRange(0,9999);
+      navigator.clipboard.writeText(ttext.value);
+  }
+   
+    return (
+      <>
+      <div className='container'>
+         <h1>{props.heading}</h1>   
+      <div className="mb-3">
+      <textarea className="form-control"   value={text} onChange={handleOnChange}    id="myBox"  rows="8"></textarea>
+      </div>
+      <button className='btn btn-primary mx-1' onClick={handleUpClick}>Convert to Uppertext </button>
+      {/* <button  className='btn btn-primary mx-1' onClick={clearkaro} >Clear Text </button> */}
+      <button className="btn btn-primary" onClick={cp}>Copy text</button> 
+      </div>
+      
+      <div className='container my-3'  > 
+       <h2>Your Text Summary</h2>
+       <p>{text.split(" ").length} words , {text.length} characters</p>
+       <p>Time need for read these words is - {(text.split(" ").length)*0.008} Minutes</p>
+      </div>
+      </>
+    )    
+  }
+
+  
+  
+---------------------------------------------------------------------
+
+// nAVBAR
+
+import React from 'react'
+import PropTypes from 'prop-types'
+
+
+export default function Navbar(props ) {
+  return (
+
+ 
+      // <nav className="navbar navbar-expand-lg  navbar-dark bg-dark"> 
+      <nav className={`navbar navbar-expand-lg  navbar-${props.md} bg-${props.md}`}> 
+  <div className="container-fluid">
+    <a className="navbar-brand" href="/">{props.title}</a>
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+        <li className="nav-item">
+          <link className="nav-link active"  to="/">Home</link>
+          {/* <a className="nav-link active" aria-current="page" href="/">Home</a> */}
+        </li>
+        <li className="nav-item">
+          <link className="nav-link" to="/about">{props.title2}</link>
+          {/* <a className="nav-link" href="/">{props.title2}</a> */}
+        </li>
+       
+      </ul>
+      <form className="d-flex" role="search">
+        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button className="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+    <div className={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`}>
+          <input className="form-check-input" onClick={props.toggle} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
+          <label className="form-check-label"  htmlFor="flexSwitchCheckDefault" >Dark Mode</label>
+      </div>
+  </div>
+  
+</nav>
+    // <h2>Hello everyone this is {props.title2}</h2>
+    
+  )
+}
+
+Navbar.propTypes = {
+      title : PropTypes.string,
+      title2 : PropTypes.string 
+}
+Navbar.defaultProps = {
+    title : 'Give the value ',
+    title2 : 'Give the value'
+}
+
+
+
+
+
+APP
+
+
+
+
+
+import Navbar from './components/Navbar';
+import A from './components/TextForm';
+import About from './components/About';
+import React, { useState } from 'react';
+import Alert from './components/Alert';
+import { BrowserRouter, Route, Routes,Router } from "react-router-dom";
+
+function App() {
+  const [mode, setMode] = useState('light'); // Whether dark mode is enabled or not
+  const [alert, setAlert] = useState(null);
+
+  const showAlert = (message, type)=>{
+      setAlert({
+        msg: message,
+        type: type
+      })
+      setTimeout(() => {
+          setAlert(null);
+      }, 1500);
+  }
+  const toggleMode = ()=>{
+    if(mode === 'light'){
+      setMode('dark');
+      document.body.style.backgroundColor = '#042743';
+      showAlert("Dark mode has been enabled", "success");
+      document.title = 'TextUtils - Dark Mode';
+    }
+    else{
+      setMode('light');
+      document.body.style.backgroundColor = 'white';
+      showAlert("Light mode has been enabled", "success");
+      document.title = 'TextUtils - Light Mode';
+    }
+  }
+  return (
+    <React.Fragment>
+    <BrowserRouter>
+      <Navbar
+        title="TextUtils2"
+        aboutText="TextAbouts"
+        mode={mode}
+        toggleMode={toggleMode}
+      />
+      <Alert alert={alert} />
+      <div className="container my-4" mode={mode}>
+        {/* <Routes>
+          <Route exact path="/about" element={<About />}></Route>
+          <Route
+            exact path="/"
+            element={
+              <A
+                showAlert={showAlert}
+                heading="Enter Text to analyze "
+                mode={mode}
+              />
+            }
+          ></Route>
+        </Routes> */}
+
+
+
+<Router>
+    <>
+      <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
+      <Alert alert={alert}/>
+      <div className='container my-3'>
+        <Routes>
+        <Route path="/about" element={<About mode={mode} />} />
+        <Route path="/" element={<A showAlert={showAlert} heading="Enter Your Text Below" mode={mode} />} />
+        </Routes>
+      </div>
+      {/* <div className="container">
+      <About />
+      </div> */}
+    </>
+    </Router>
+
+
+
+
+
+
+      </div>
+    </BrowserRouter>
+    </React.Fragment>
+  );
+}
+
+export default App;
